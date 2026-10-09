@@ -1,0 +1,18 @@
+/*=========================================
+    ANIMATIONS.CSS - Transiciones entre vistas
+=========================================*/
+
+#app > * {
+    animation: viewIn .35s ease;
+}
+
+@keyframes viewIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

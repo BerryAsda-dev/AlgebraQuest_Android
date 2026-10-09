@@ -1,0 +1,149 @@
+/*==========================
+        HUD
+==========================*/
+
+#hud {
+    width: 100%;
+    background: #111d45;
+    border-bottom: 3px solid #ffc83d;
+    padding: 8px 22px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+    font-size: 14px;
+    transition: border-color .2s ease;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hud-stat {
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 2px 7px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.hud-stat:hover,
+.hud-stat:focus-visible {
+    background: rgba(255, 200, 61, .14);
+    color: #ffe08a;
+    outline: 2px solid rgba(255, 200, 61, .65);
+    outline-offset: 1px;
+}
+
+.hud-stat:active {
+    transform: scale(.96);
+}
+
+.hud-lives {
+    letter-spacing: 0;
+}
+
+.hud-player {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hud-middle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra {
+    flex: 1;
+    height: 12px;
+    background: #2c2c55;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progreso {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ff88, #00c853);
+    transition: width .65s cubic-bezier(.2,.8,.2,1);
+}
+
+.hud-bottom {
+    margin-top: 2px;
+    text-align: right;
+    color: #FFD700;
+}
+
+.hud-detail {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 18px;
+    width: min(340px, calc(100vw - 28px));
+    padding: 16px 48px 16px 18px;
+    border: 1px solid rgba(255, 200, 61, .55);
+    border-radius: 8px;
+    background: #13234a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .4);
+    animation: hud-pop .18s ease-out;
+}
+
+.hud-detail[hidden] {
+    display: none;
+}
+
+.hud-detail p {
+    margin: 0;
+    color: #f3f5ff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.hud-detail button {
+    width: auto;
+    margin: 10px 0 0;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background: #ffc83d;
+    color: #17213c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hud-detail .hud-close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 22px;
+}
+
+@keyframes hud-pop {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Deja espacio para que el HUD fijo no tape el contenido */
+body.con-hud {
+    padding-top: 86px;
+}

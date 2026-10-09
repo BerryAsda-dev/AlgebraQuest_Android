@@ -1,0 +1,5 @@
+[
+  {"username":"admin","password":"Admin123!","displayName":"Administrador","role":"ADMINISTRADOR"},
+  {"username":"supervisor","password":"Supervisor123!","displayName":"Supervisor académico","role":"SUPERVISOR"},
+  {"username":"alumno","password":"Alumno123!","displayName":"Estudiante","role":"ALUMNO"}
+]

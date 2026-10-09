@@ -1,0 +1,271 @@
+/*=========================================
+        GAME.CSS - ÁLGEBRA QUEST
+=========================================*/
+
+.gameContainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    color: white;
+    animation: fade .4s;
+}
+
+.gameHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gameHeader h1 {
+    color: #ffc83d;
+    font-size: 36px;
+}
+
+.gameHeader h3 {
+    color: #bfbfbf;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.barraProgresoNivel {
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    margin: 15px auto 0;
+    background: #2c2c55;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progresoNivel {
+    height: 100%;
+    background: linear-gradient(90deg, #ffc83d, #ff9d3d);
+    transition: .4s;
+}
+
+.card {
+    background: #162447;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .4);
+}
+
+.card h2 {
+    color: #ffc83d;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*=============================
+        ZONA DE RESPUESTA (drag & drop)
+=============================*/
+
+.zona {
+    width: 100%;
+    max-width: 420px;
+    height: 90px;
+    margin: auto;
+    border: 3px dashed #ffffff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #ffffff;
+    background: #0f1d40;
+    text-align: center;
+    padding: 10px;
+}
+
+/*=============================
+        OPCIONES / PIEZAS
+=============================*/
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.pieza {
+    background: #2c4d91;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .25s;
+    user-select: none;
+    border: 3px solid transparent;
+}
+
+.pieza[draggable="true"] {
+    cursor: grab;
+}
+
+.pieza:hover {
+    transform: scale(1.05);
+    background: #4166ba;
+}
+
+.pieza.seleccionada {
+    border-color: #ffc83d;
+    background: #4166ba;
+    box-shadow: 0 0 20px rgba(255, 200, 61, .5);
+}
+
+.pieza.correcta {
+    border-color: #5be0b2;
+    background: #176c5a;
+    box-shadow: 0 0 18px rgba(91, 224, 178, .35);
+}
+
+.pieza.incorrecta {
+    border-color: #ff8e83;
+    background: #713d4a;
+    animation: answer-shake .25s ease-in-out;
+}
+
+.pieza:focus-visible {
+    outline: 3px solid #ffc83d;
+    outline-offset: 3px;
+}
+
+.opciones .opcionBtn {
+    width: 100%;
+    min-height: 76px;
+    margin: 0;
+}
+
+.game-live-stats {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px auto 0;
+}
+
+.game-live-stats span {
+    min-width: 112px;
+    padding: 7px 10px;
+    border: 1px solid rgba(164, 187, 221, .25);
+    border-radius: 5px;
+    background: rgba(19, 35, 74, .72);
+    color: #cbd5e6;
+    font-size: 12px;
+}
+
+.game-live-stats strong { color: #ffc83d; font-variant-numeric: tabular-nums; }
+
+.opcionBtn.correcta {
+    border-color: #5be0b2;
+    background: #176c5a;
+}
+
+.opcionBtn.incorrecta {
+    border-color: #ff8e83;
+    background: #713d4a;
+}
+
+.zona.zona-seleccionada {
+    border-color: #ffc83d;
+    background: #172b4d;
+    color: #ffe08a;
+}
+
+.arrastrando {
+    opacity: .5;
+}
+
+/*=============================
+        BOTÓN COMPROBAR (dentro de .card)
+=============================*/
+
+.card button {
+    display: block;
+    margin: 30px auto 0;
+    width: fit-content;
+}
+
+/*=============================
+        MENSAJES
+=============================*/
+
+#mensaje {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 28px;
+}
+
+#mensaje.correcto {
+    color: #00ff99;
+}
+
+#mensaje.incorrecto {
+    color: #ff5050;
+}
+
+@keyframes answer-shake {
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+/*=============================
+        PANTALLA DE RESULTADO
+=============================*/
+
+.resultado {
+    text-align: center;
+}
+
+.resultado h1 {
+    color: #ffc83d;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.resultado p {
+    font-size: 18px;
+    color: #dcdcdc;
+    margin-bottom: 15px;
+}
+
+.statsResultado {
+    font-size: 22px;
+    margin: 20px 0;
+    color: #00ff99;
+    font-weight: 600;
+}
+
+.resultado button {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 15px auto 0;
+}
+
+.mundoDesbloqueado {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #3d2b6b, #5a3d99);
+    border: 2px solid #ffc83d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.mundoDesbloqueado span {
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .12);
+    font-weight: 600;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Álgebra Quest</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hud.css?v=20260927b">
+<link rel="stylesheet" href="css/game.css?v=20261005a">
+<link rel="stylesheet" href="css/worlds.css">
+<link rel="stylesheet" href="css/menu.css?v=20261005d">
+<link rel="stylesheet" href="css/ranking.css?v=20261005d">
+<link rel="stylesheet" href="css/admin.css?v=20261005d">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/tutorials.css?v=20261005c">
+<link rel="stylesheet" href="css/store.css?v=20260927b">
+<link rel="stylesheet" href="css/responsive.css?v=20261007a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="stars"></div>
+
+<!-- El HUD se monta aquí y persiste entre vistas -->
+<div id="hudContainer"></div>
+
+<!-- El router pinta cada pantalla dentro de #app -->
+<div id="app"></div>
+
+<!-- ==========================================================
+     MOTOR DEL JUEGO (orden de carga importante: datos -> core -> vistas -> app)
+     ========================================================== -->
+
+<!-- Datos -->
+<script src="js/data/worlds.js?v=20261005b"></script>
+
+<!-- Core / motor -->
+<script src="js/core/images.js"></script>
+<script src="js/core/player.js?v=20260927b"></script>
+<script src="js/core/storage.js?v=20261005d"></script>
+<script src="js/core/engine.js?v=20261005a"></script>
+<script src="js/core/hud.js?v=20260927b"></script>
+<script src="js/core/router.js?v=20260927b"></script>
+
+<!-- Vistas -->
+<script src="js/views/home.js?v=20261005d"></script>
+<script src="js/views/menu.js?v=20261005d"></script>
+<script src="js/views/worlds.js"></script>
+<script src="js/views/levelSelect.js?v=20260927b"></script>
+<script src="js/views/levelIntro.js?v=20260927b"></script>
+<script src="js/views/tutorial.js?v=20261005b"></script>
+<script src="js/views/tutorials.js?v=20260927b"></script>
+<script src="js/views/store.js?v=20260927b"></script>
+<script src="js/views/game.js?v=20261005a"></script>
+<script src="js/views/achievements.js?v=20260927b"></script>
+<script src="js/views/ranking.js"></script>
+<script src="js/views/adminLogin.js?v=20261005d"></script>
+<script src="js/views/teacherRanking.js?v=20261005e"></script>
+<script src="js/views/settings.js"></script>
+
+<!-- Bootstrap -->
+<script src="js/app.js?v=20261005d"></script>
+
+</body>
+</html>

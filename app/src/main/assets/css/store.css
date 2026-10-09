@@ -1,0 +1,267 @@
+.store-page {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 28px 10px 40px;
+    color: #f7f8fb;
+    animation: store-enter .35s ease both;
+}
+
+.store-heading,
+.trophy-shop-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.store-kicker {
+    margin: 0 0 6px;
+    color: #5be0b2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.store-heading h1,
+.trophy-shop-heading h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 30px;
+}
+
+.store-back,
+.store-achievements {
+    width: auto;
+    margin: 0;
+    padding: 9px 13px;
+    border: 1px solid rgba(164, 187, 221, .3);
+    border-radius: 6px;
+    background: #13234a;
+    color: #dbe5f7;
+    font-size: 13px;
+}
+
+.store-back:hover,
+.store-achievements:hover {
+    border-color: #ffc83d;
+    background: #1a3159;
+    box-shadow: none;
+}
+
+.store-balance {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 22px;
+    border-top: 1px solid rgba(164, 187, 221, .22);
+    border-bottom: 1px solid rgba(164, 187, 221, .22);
+}
+
+.store-balance div {
+    display: grid;
+    gap: 4px;
+    padding: 13px 18px;
+    border-right: 1px solid rgba(164, 187, 221, .16);
+}
+
+.store-balance div:last-child { border-right: 0; }
+
+.store-balance span {
+    color: #9fadc7;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.store-balance strong {
+    color: #f6f7fb;
+    font-size: 14px;
+}
+
+.store-message {
+    min-height: 24px;
+    margin: 10px 0 4px;
+    color: #5be0b2;
+    font-size: 13px;
+}
+
+.life-exchange {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(164, 187, 221, .22);
+}
+
+.life-emblem {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border: 1px solid rgba(255, 133, 133, .45);
+    border-radius: 8px;
+    background: rgba(255, 133, 133, .09);
+    font-size: 23px;
+}
+
+.life-copy h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.life-copy > p:last-child {
+    margin: 4px 0 0;
+    color: #b7c2d6;
+    font-size: 12px;
+}
+
+.life-price {
+    color: #ffe08a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.life-exchange button,
+.comprarTrofeo {
+    width: auto;
+    margin: 0;
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 5px;
+    background: #5be0b2;
+    color: #10283a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.life-exchange button:hover:not(:disabled),
+.comprarTrofeo:hover:not(:disabled) {
+    background: #83edcb;
+    box-shadow: 0 4px 16px rgba(91, 224, 178, .2);
+}
+
+.life-exchange button:disabled,
+.comprarTrofeo:disabled {
+    background: #263651;
+    color: #8998b2;
+    cursor: not-allowed;
+}
+
+.trophy-shop {
+    margin-top: 21px;
+}
+
+.trophy-shop-heading {
+    align-items: flex-end;
+    margin-bottom: 6px;
+}
+
+.trophy-shop-heading h2 { font-size: 22px; }
+
+.trophy-shop-heading > span {
+    color: #9fadc7;
+    font-size: 11px;
+}
+
+.trofeoLista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.trofeoProducto {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px 12px;
+    padding: 13px 3px;
+    border-bottom: 1px solid rgba(164, 187, 221, .18);
+}
+
+.trofeoProducto.adquirido {
+    border-bottom-color: rgba(91, 224, 178, .4);
+}
+
+.productoIcono {
+    display: grid;
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid rgba(255, 200, 61, .25);
+    border-radius: 6px;
+    background: rgba(255, 200, 61, .07);
+    font-size: 22px;
+}
+
+.productoInfo h3 {
+    margin: 0;
+    color: #f7f8fb;
+    font-size: 13px;
+}
+
+.productoInfo p {
+    margin: 3px 0 0;
+    color: #9fadc7;
+    font-size: 11px;
+}
+
+.comprarTrofeo {
+    grid-column: 2;
+    justify-self: start;
+    background: rgba(255, 200, 61, .15);
+    color: #ffe08a;
+}
+
+.comprarTrofeo:hover:not(:disabled) {
+    background: rgba(255, 200, 61, .25);
+    box-shadow: none;
+}
+
+.comprarTrofeo:disabled {
+    background: rgba(164, 187, 221, .12);
+    color: #aebbd2;
+}
+
+.store-achievements {
+    margin-top: 20px;
+}
+
+.trofeosVitrina {
+    margin: 34px auto 0;
+    padding: 18px 0;
+    border-top: 1px solid rgba(164, 187, 221, .22);
+    text-align: center;
+}
+
+.trofeosVitrina h2 {
+    margin-bottom: 14px;
+    color: #ffc83d;
+    font-size: 21px;
+}
+
+.trofeosVitrina > p {
+    color: #b7c2d6;
+    font-size: 13px;
+}
+
+.trofeosAdquiridos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.trofeosAdquiridos span {
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 200, 61, .35);
+    border-radius: 5px;
+    background: rgba(255, 200, 61, .08);
+    color: #ffe08a;
+    font-size: 12px;
+}
+
+@keyframes store-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}

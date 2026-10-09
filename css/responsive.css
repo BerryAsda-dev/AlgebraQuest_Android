@@ -1,0 +1,498 @@
+/*=========================================
+    RESPONSIVE.CSS - ÁLGEBRA QUEST
+=========================================
+    Ajustes para tablets y celulares. Se carga
+    al final para poder sobreescribir los
+    valores "de escritorio" de los demás CSS
+    sin tocarlos.
+=========================================*/
+
+/* ================================================= */
+/* ============== TABLETS (≤ 768px) ================= */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 30px 16px;
+    }
+
+    /* --- Hero de 2 columnas (home / menu / niveles / intro) --- */
+    .container {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left h1 {
+        font-size: 44px;
+    }
+
+    .left p {
+        font-size: 18px;
+    }
+
+    .left h2 {
+        font-size: 22px;
+    }
+
+    .right img {
+        max-width: 220px;
+    }
+
+    .menuBotones,
+    .loginBox {
+        max-width: 420px;
+    }
+
+    /* --- Mundos / Logros --- */
+    .worldContainer h1 {
+        font-size: 38px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 18px;
+    }
+
+    /* --- Juego --- */
+    .gameContainer {
+        margin: 30px auto;
+    }
+
+    .gameHeader h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}
+
+/* ================================================= */
+/* ============== CELULARES (≤ 480px) =============== */
+/* ================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    /* --- Botones genéricos --- */
+    button {
+        padding: 14px 30px;
+        font-size: 17px;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* --- Hero de 2 columnas --- */
+    .left h1 {
+        font-size: 34px;
+    }
+
+    .left p {
+        font-size: 16px;
+    }
+
+    .left h2 {
+        font-size: 19px;
+    }
+
+    .right img {
+        max-width: 170px;
+    }
+
+    .menuBotones button {
+        padding: 15px;
+        font-size: 17px;
+    }
+
+    .nivel {
+        font-size: 16px;
+    }
+
+    .nivel span {
+        font-size: 12px;
+    }
+
+    /* --- HUD --- */
+    #hud {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .hud-top {
+        gap: 4px 10px;
+    }
+
+    .hud-middle {
+        gap: 8px;
+    }
+
+    body.con-hud {
+        padding-top: 118px;
+    }
+
+    /* --- Mundos / Logros / Ranking (contenedor centrado) --- */
+    .worldContainer h1 {
+        font-size: 30px;
+    }
+
+    .worldContainer h2 {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+        gap: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .icon {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .rankingFila {
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .ajustesCard input,
+    .loginBox input {
+        font-size: 16px;
+    }
+
+    /* --- Juego --- */
+    .gameHeader h1 {
+        font-size: 22px;
+    }
+
+    .gameHeader h3 {
+        font-size: 14px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .pieza {
+        padding: 14px;
+        font-size: 17px;
+    }
+
+    .zona {
+        height: 75px;
+        font-size: 17px;
+    }
+
+    .card button,
+    .resultado button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .statsResultado {
+        font-size: 18px;
+    }
+}
+
+/* ================================================= */
+/* ============ CELULARES CHICOS (≤ 360px) ========== */
+/* ================================================= */
+
+@media (max-width: 360px) {
+
+    .left h1 {
+        font-size: 28px;
+    }
+
+    .worldContainer h1 {
+        font-size: 26px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #hud {
+        font-size: 11px;
+    }
+
+    body.con-hud {
+        padding-top: 128px;
+    }
+}
+
+/* ================================================= */
+/* ==== PANTALLAS BAJITAS EN LANDSCAPE (celular) ==== */
+/* ================================================= */
+
+@media (max-height: 480px) and (orientation: landscape) {
+
+    body {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .left {
+        align-items: flex-start;
+    }
+
+    .right {
+        display: none;
+    }
+
+    body.con-hud {
+        padding-top: 90px;
+    }
+
+    #hud {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+/* Ajustes para las vistas que tienen layouts propios de escritorio. */
+@media (max-width: 768px) {
+    #app,
+    .menu-screen,
+    .worldContainer,
+    .gameContainer,
+    .teacher-dashboard,
+    .store-page,
+    .tutorial-page,
+    .tutorial-library,
+    .admin-login-page {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .menu-screen {
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 20px 0;
+    }
+
+    .menu-character {
+        width: min(220px, 60%);
+        align-self: center;
+        justify-self: center;
+    }
+
+    .menu-character img {
+        max-height: 220px;
+    }
+
+    .lesson-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tutorial-title-row,
+    .tutorial-library-heading,
+    .store-heading,
+    .trophy-shop-heading {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-shortcuts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trofeoLista,
+    .topic-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .teacher-heading {
+        flex-wrap: wrap;
+    }
+
+    .teacher-toolbar select {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .life-exchange {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .life-price,
+    .life-exchange button {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .store-balance {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .store-balance div {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        padding: 10px 12px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(164, 187, 221, .16);
+    }
+
+    .store-balance div:last-child {
+        border-bottom: 0;
+    }
+
+    .hud-top {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .hud-stat {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .hud-player {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .teacher-dashboard,
+    .store-page,
+    .tutorial-page,
+    .tutorial-library {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-heading h1 {
+        font-size: 32px;
+    }
+
+    .menu-shortcuts {
+        gap: 8px;
+    }
+
+    .menu-shortcuts button {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .mission-panel {
+        padding: 14px;
+    }
+
+    .mission-copy h2 {
+        font-size: 20px;
+    }
+
+    .mission-actions {
+        align-items: stretch;
+    }
+
+    .mission-actions button {
+        flex: 1 1 100%;
+    }
+
+    .rankingFila {
+        min-width: 0;
+    }
+
+    .tutorial-title-row h1,
+    .tutorial-library-heading h1,
+    .store-heading h1 {
+        font-size: 26px;
+        overflow-wrap: anywhere;
+    }
+
+    .lesson-screen {
+        aspect-ratio: auto;
+        min-height: 220px;
+        padding: 12px;
+    }
+
+    .lesson-text {
+        font-size: 17px;
+    }
+
+    .review-options {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-login-story {
+        min-height: 250px;
+        padding: 22px;
+    }
+
+    .admin-login-panel {
+        padding: 22px;
+    }
+
+    .admin-signal {
+        right: 18px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cards.logros {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cards > .card {
+        min-width: 0;
+        padding: 14px 8px;
+        overflow-wrap: anywhere;
+    }
+
+    .cards .icon {
+        font-size: 36px;
+    }
+
+    .menu-shortcuts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .game-live-stats {
+        flex-wrap: wrap;
+    }
+
+    .game-live-stats span {
+        flex: 1 1 100px;
+    }
+}

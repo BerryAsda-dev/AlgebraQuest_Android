@@ -1,0 +1,176 @@
+/*=========================================
+    RANKING.CSS
+=========================================*/
+
+.rankingLista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.rankingFila {
+    display: grid;
+    grid-template-columns: 45px 1fr auto auto auto;
+    align-items: center;
+    gap: 15px;
+    background: #13275a;
+    padding: 14px 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .3);
+}
+
+.rankingFila.yo {
+    border: 2px solid #ffc83d;
+    background: #1d3d82;
+}
+
+.rankingPos {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rankingNombre {
+    font-weight: 600;
+}
+
+.rankingDato {
+    font-size: 14px;
+    color: #d6d6d6;
+    white-space: nowrap;
+}
+
+.teacher-dashboard {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 28px 10px 40px;
+    color: #f7f8fb;
+    animation: tutorial-enter .35s ease both;
+}
+
+.teacher-heading,
+.teacher-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.teacher-heading {
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.teacher-heading h1 {
+    margin: 0 0 7px;
+    color: #fff;
+    font-size: 32px;
+}
+
+.teacher-heading p:last-child {
+    margin: 0;
+    color: #bac5db;
+    font-size: 14px;
+}
+
+.teacher-heading button,
+.teacher-toolbar button,
+.teacher-toolbar select {
+    width: auto;
+    margin: 0;
+    padding: 9px 12px;
+    border: 1px solid rgba(164, 187, 221, .3);
+    border-radius: 5px;
+    background: #172b4d;
+    color: #f7f8fb;
+    font: inherit;
+    font-size: 13px;
+}
+
+.teacher-toolbar {
+    flex-wrap: wrap;
+    padding: 13px 0;
+    border-top: 1px solid rgba(164, 187, 221, .2);
+    border-bottom: 1px solid rgba(164, 187, 221, .2);
+    color: #cbd5e6;
+    font-size: 13px;
+}
+
+.teacher-toolbar select { min-width: 190px; }
+.teacher-toolbar button { border-color: rgba(91, 224, 178, .45); color: #8ff0cf; }
+.teacher-toolbar button:hover { background: rgba(91, 224, 178, .12); box-shadow: none; }
+#teacherStatus { margin-left: auto; color: #aebbd2; font-size: 12px; }
+#teacherStatus.teacher-error { color: #ff9b8e; }
+
+.teacher-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin: 18px 0;
+    background: rgba(164, 187, 221, .2);
+}
+
+.teacher-summary div {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+    padding: 14px 16px;
+    background: #101f3b;
+}
+
+.teacher-summary span { color: #aebbd2; font-size: 11px; }
+.teacher-summary strong { overflow: hidden; color: #fff; font-size: 20px; text-overflow: ellipsis; white-space: nowrap; }
+
+.teacher-table-wrap { overflow-x: auto; }
+.teacher-table-head,
+.teacher-row {
+    display: grid;
+    grid-template-columns: 46px minmax(150px, 1.4fr) repeat(4, minmax(90px, .8fr));
+    align-items: center;
+    gap: 12px;
+    min-width: 690px;
+    padding: 12px 14px;
+}
+
+.teacher-table-head {
+    color: #8e9bb4;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.teacher-row {
+    border-bottom: 1px solid rgba(164, 187, 221, .16);
+    color: #dce5f2;
+    font-size: 13px;
+    animation: tutorial-enter .25s ease both;
+}
+
+.teacher-row.podium-1 { background: rgba(255, 200, 61, .12); }
+.teacher-row.podium-2 { background: rgba(164, 187, 221, .08); }
+.teacher-row.podium-3 { background: rgba(91, 224, 178, .07); }
+.teacher-player-name { color: #fff; font-weight: 700; }
+.teacher-row span:nth-child(n+3) { font-variant-numeric: tabular-nums; }
+.teacher-empty { padding: 24px 14px; color: #aebbd2; text-align: center; }
+
+@media (max-width: 600px) {
+    .teacher-heading { align-items: flex-start; }
+    .teacher-heading h1 { font-size: 26px; }
+    .teacher-heading button { flex: 0 0 auto; }
+    .teacher-summary { grid-template-columns: 1fr; }
+    #teacherStatus { width: 100%; margin-left: 0; }
+}
+
+@media (max-width: 600px) {
+    .rankingFila {
+        grid-template-columns: 35px 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 6px;
+    }
+
+    .rankingDato {
+        font-size: 12px;
+    }
+}

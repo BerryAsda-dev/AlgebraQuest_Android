@@ -1,0 +1,23 @@
+{
+  "features": [
+    "io.ktor/server-core",
+    "io.ktor/server-content-negotiation",
+    "io.ktor/server-kotlinx-serialization",
+    "io.ktor/server-cors",
+    "io.ktor/server-status-pages"
+  ],
+  "configurationOption": "CODE",
+  "settings": {
+    "build_system_args": {
+      "include_wrapper": true
+    },
+    "build_system": "GRADLE_KTS",
+    "project_name": "algebraquest-backend",
+    "company_website": "algebraquest.com",
+    "ktor_version": "3.3.0",
+    "kotlin_version": "2.2.20",
+    "engine": "NETTY"
+  },
+  "addWrapper": true,
+  "addDefaultRoutes": true
+}

@@ -1,0 +1,417 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    background: #071330;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+#app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ========================= */
+/* CONTENEDOR PRINCIPAL (hero de 2 columnas) */
+/* ========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* ========================= */
+/* PANEL IZQUIERDO */
+/* ========================= */
+
+.left {
+    width: 50%;
+    min-width: 300px;
+    animation: fade .6s;
+}
+
+.left h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    color: #ffc83d;
+}
+
+.left span {
+    display: block;
+    color: #ffffff;
+}
+
+.left p {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #e5e5e5;
+}
+
+.left h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 500;
+    color: #ffc83d;
+}
+
+/* ========================= */
+/* BOTÓN GENÉRICO */
+/* ========================= */
+
+button {
+    margin-top: 30px;
+    padding: 16px 60px;
+    font-size: 22px;
+    border: none;
+    border-radius: 50px;
+    background: #6c3cff;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #8f63ff;
+}
+
+button:active {
+    transform: scale(.97);
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btnVolver {
+    display: block;
+    background: transparent;
+    box-shadow: none;
+    color: #bfc7ff;
+    padding: 10px 0;
+    margin-top: 15px;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.btnVolver:hover {
+    transform: none;
+    box-shadow: none;
+    color: white;
+}
+
+.teacher-entry {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: auto;
+    margin-top: 18px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(91, 224, 178, .55);
+    border-radius: 0;
+    background: transparent;
+    color: #9fe9d0;
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.teacher-entry:hover {
+    transform: translateX(4px);
+    color: #fff;
+    box-shadow: none;
+}
+
+/* ========================= */
+/* BOTÓN DE REGRESO (fijo, arriba a la izquierda) */
+/* ========================= */
+
+.btnRegresar {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 1001;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    margin: 0;
+    padding: 8px 18px;
+    font-size: 14px;
+    background: rgba(17, 29, 69, 0.9);
+    color: #bfc7ff;
+    border: 1px solid #6c3cff;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .35);
+    backdrop-filter: blur(4px);
+}
+
+.btnRegresar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #8f63ff;
+    color: white;
+}
+
+/* Cuando el HUD está visible, el botón baja para no taparlo */
+body.con-hud .btnRegresar {
+    top: 112px;
+}
+
+@media (max-width: 480px) {
+    .btnRegresar {
+        top: 10px;
+        right: 10px;
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    body.con-hud .btnRegresar {
+        top: 150px;
+    }
+}
+
+.btnPeligro {
+    background: #b3261e;
+}
+
+.btnPeligro:hover {
+    box-shadow: 0 0 25px #ff5c50;
+}
+
+/* ========================= */
+/* PANEL DERECHO */
+/* ========================= */
+
+.right {
+    width: 40%;
+    min-width: 260px;
+    display: flex;
+    justify-content: center;
+}
+
+.right img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ========================= */
+/* FONDO DE ESTRELLAS */
+/* ========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: .25;
+    z-index: -1;
+}
+
+/* ================================================= */
+/* =================== MENÚ ========================= */
+/* ================================================= */
+
+.menuBotones {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 340px;
+}
+
+.menuBotones button {
+    margin-top: 0;
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #6c3cff, #8b5cff);
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .35);
+}
+
+.menuBotones button:hover:not(:disabled) {
+    transform: translateX(10px);
+    background: linear-gradient(135deg, #8458ff, #a270ff);
+    box-shadow: 0 0 25px #9b7bff;
+}
+
+/*=========================
+    BOTONES DE NIVEL
+==========================*/
+
+.nivel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+}
+
+.nivel span {
+    font-size: 14px;
+    opacity: .85;
+    font-weight: 400;
+}
+
+.nivel.desbloqueado {
+    background: linear-gradient(135deg, #37b24d, #40c057);
+}
+
+.nivel.desbloqueado:hover:not(:disabled) {
+    background: linear-gradient(135deg, #40c057, #51cf66);
+    transform: translateX(10px);
+    box-shadow: 0 0 25px #40c057aa;
+}
+
+.nivel.bloqueado {
+    background: #3a3f52;
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+/* ================================================= */
+/* =================== AJUSTES ====================== */
+/* ================================================= */
+
+.ajustesCard {
+    width: 100%;
+    max-width: 480px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.ajustesCard label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #bfc7ff;
+}
+
+.ajustesCard input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    background: #0f1d40;
+    color: white;
+    outline: none;
+}
+
+.ajustesCard button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.ajustesCard hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    margin: 25px 0;
+}
+
+.ajustesCard p {
+    font-size: 15px;
+    color: #bfbfbf;
+    margin-bottom: 10px;
+}
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================= */
+/* =================== LOGIN ========================= */
+/* ================================================= */
+
+.loginBox {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 340px;
+}
+
+.loginBox label {
+    font-size: 16px;
+    color: #bfc7ff;
+}
+
+.loginBox input {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    background: #0f1d40;
+    color: white;
+    outline: none;
+}
+
+.loginBox button {
+    margin-top: 0;
+}
+
+.errorLogin {
+    color: #ff6b6b;
+    font-size: 14px;
+    min-height: 18px;
+    margin-top: 8px;
+}
+
+.bienvenida {
+    margin-top: 20px;
+    font-size: 20px;
+}
