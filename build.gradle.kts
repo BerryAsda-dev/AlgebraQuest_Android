@@ -1,36 +1,27 @@
-plugins {
-    id("com.android.application") version "8.11.1" apply false
-    id("com.android.library") version "8.11.1" apply false
-    kotlin("multiplatform") version "2.2.20" apply false
-    kotlin("android") version "2.2.20" apply false
-    kotlin("jvm") version "2.2.20" apply false
-    kotlin("plugin.serialization") version "2.2.20" apply false
-    id("org.jetbrains.compose") version "1.9.0" apply false
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false
-}
-// Use the installed Node.js without adding a distribution repository.
-plugins.withType<org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootPlugin> {
-    extensions.configure<org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsEnvSpec> {
-        download.set(false)
-    }
+﻿plugins {
+    kotlin("jvm") version "2.4.21"
+    kotlin("plugin.serialization") version "2.4.21"
+    application
 }
 
-// Kotlin 2.2 also uses the JS Node environment when invoking Webpack for Wasm.
-plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
-    extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsEnvSpec> {
-        download.set(false)
-    }
+
+
+application { mainClass.set("com.algebraquest.backend.ApplicationKt") }
+
+dependencies {
+    implementation("io.ktor:ktor-server-netty:3.3.0")
+    implementation("io.ktor:ktor-server-content-negotiation:3.3.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+    implementation("io.ktor:ktor-server-cors:3.3.0")
+    implementation("io.ktor:ktor-server-status-pages:3.3.0")
+    implementation("ch.qos.logback:logback-classic:1.5.18")
+    testImplementation("io.ktor:ktor-server-test-host:3.3.0")
+    testImplementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+    testImplementation(kotlin("test"))
 }
 
-allprojects {
-    plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsPlugin> {
-        extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsEnvSpec> {
-            download.set(false)
-        }
-    }
-    plugins.withType<org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsPlugin> {
-        extensions.configure<org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsEnvSpec> {
-            download.set(false)
-        }
-    }
+tasks.test { useJUnitPlatform() }
+dependencies {
+    testImplementation(kotlin("test-junit5"))
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
